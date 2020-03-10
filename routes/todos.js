@@ -36,11 +36,24 @@ router.get('/:todoID', function (request, response) {
         })
 });
 
+
 router.put('/:todoID', function (request, response) {
     var id = request.params.todoID;
-    db.Todo.findOneAndUpdate({ _id: request.params.todoID }, request.body)
+    db.Todo.findOneAndUpdate({ _id: request.params.todoID }, request.body, { new: true })
         .then(function (todoS) {
             response.json(todoS);
+        })
+        .catch(function (err) {
+            response.send(err);
+        })
+});
+
+
+router.delete('/:todoID', function (request, response) {
+    var id = request.params.todoID;
+    db.Todo.remove({ _id: request.params.todoID })
+        .then(function (todoS) {
+            response.json('Item succesfully deleted');
         })
         .catch(function (err) {
             response.send(err);
