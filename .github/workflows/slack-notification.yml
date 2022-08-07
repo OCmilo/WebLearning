@@ -1,0 +1,22 @@
+name: Slack Integration
+on:
+  issue_comment:
+    types:
+      - created
+      - edited
+    branches:
+      - development
+jobs:
+  send-pr-message:
+    name: Send PR details to Slack
+    if: github.event.issue.pull_request && contains(github.event.comment.body, "Preview")
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to a Slack channel
+        id: slack
+        uses: slackapi/slack-github-action@v1.21.0
+        with:
+          channel-id: "C03SEJ9N1QC"
+          slack-message: "Pull Request: ${{ github.event.pull_request.title }}\n${{ github.event.pull_request.body }}\n${{ github.event.comment.body }}"
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
