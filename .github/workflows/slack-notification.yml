@@ -70,7 +70,7 @@ jobs:
                       "type": "button",
                       "text": {
                         "type": "plain_text",
-                        "text": "Go to PR ↳",
+                        "text": "Go to PR",
                         "emoji": true
                       },
                       "value": "click_me_123",
