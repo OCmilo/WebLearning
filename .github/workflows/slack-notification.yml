@@ -64,22 +64,20 @@ jobs:
                   "type": "divider"
                 },
                 {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Go to pull request"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "value": "click_me_123",
-                    "url": "${{ github.event.issue.html_url }}",
-                    "action_id": "button-action"
-                  }
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "Go to PR↗",
+                        "emoji": true
+                      },
+                      "value": "click_me_123",
+                      "url": "${{ github.event.issue.html_url }}",
+                      "action_id": "actionId-0"
+                    }
+                  ]
                 }
               ]
             }
