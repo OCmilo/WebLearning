@@ -9,7 +9,7 @@ on:
 jobs:
   send-pr-message:
     name: Send PR details to Slack
-    if: github.event.issue.pull_request && contains(github.event.comment.body, "Preview")
+    if: github.event.issue.pull_request && contains(github.event.comment.body, 'Preview')
     runs-on: ubuntu-latest
     steps:
       - name: Post to a Slack channel
