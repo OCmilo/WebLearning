@@ -24,7 +24,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": ${{ github.event.issue.title }},
+                    "text": "${{ github.event.issue.title }}",
                     "emoji": true
                   }
                 },
@@ -32,7 +32,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ github.event.issue.body }}
+                    "text": "${{ github.event.issue.body }}"
                   }
                 },
                 {
@@ -40,12 +40,12 @@ jobs:
                   "elements": [
                     {
                       "type": "image",
-                      "image_url": ${{ github.event.issue.user.avatar_url }},
-                      "alt_text": ${{ github.event.issue.user.login }}
+                      "image_url": "${{ github.event.issue.user.avatar_url }}",
+                      "alt_text": "${{ github.event.issue.user.login }}"
                     },
                     {
                       "type": "plain_text",
-                      "text": ${{ github.event.issue.user.login }},
+                      "text": "${{ github.event.issue.user.login }}",
                       "emoji": true
                     }
                   ]
@@ -57,7 +57,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ github.event.comment.body }}
+                    "text": "${{ github.event.comment.body }}"
                   }
                 },
                 {
@@ -77,7 +77,7 @@ jobs:
                       "emoji": true
                     },
                     "value": "click_me_123",
-                    "url": ${{ github.event.issue.html_url }},
+                    "url": "${{ github.event.issue.html_url }}",
                     "action_id": "button-action"
                   }
                 }
