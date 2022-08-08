@@ -20,7 +20,7 @@ jobs:
           channel-id: "C03SEJ9N1QC"
           payload: |
             {
-              "text": ${{ toJSON(github.event.issue.title) }}
+              "text": ${{ toJSON(github.event.issue.title) }},
               "blocks": [
                 {
                   "type": "header",
