@@ -33,7 +33,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ toJSON(github.event.issue.body) }}
+                    "text": ${{ fromJSON(toJSON(github.event.issue.body)) }}
                   }
                 },
                 {
