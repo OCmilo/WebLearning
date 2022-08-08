@@ -63,7 +63,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ steps.slackify.outputs.text }}
+                    "text": ${{ toJSON(steps.slackify.outputs.text) }}
                   }
                 },
                 {
