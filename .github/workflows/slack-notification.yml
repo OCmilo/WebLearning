@@ -21,6 +21,7 @@ jobs:
           payload: |
             {
               "text": ${{ toJSON(github.event.issue.title) }},
+              "mrkdwn": true,
               "blocks": [
                 {
                   "type": "header",
