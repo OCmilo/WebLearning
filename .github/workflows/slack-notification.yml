@@ -12,7 +12,12 @@ jobs:
     if: github.event.issue.pull_request && contains(github.event.comment.body, 'Preview')
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.comment.body }}"
+      - name: Slack Markdown Converter
+        id: slackify
+        uses: LoveToKnow/slackify-markdown-action@v1.0.0
+        with:
+          text: ${{ github.event.comment.body }}
+
       - name: Post to a Slack channel
         id: slack
         uses: slackapi/slack-github-action@v1.21.0
@@ -58,7 +63,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ toJSON(github.event.comment.body) }}
+                    "text": ${{ steps.slackify.outputs.text }}
                   }
                 },
                 {
