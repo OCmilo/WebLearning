@@ -57,7 +57,7 @@ jobs:
                 {
                   "type": "section",
                   "text": {
-                    "type": "mrkdwn",
+                    "type": "plain_text",
                     "text": "${{ github.event.comment.body }}"
                   }
                 },
