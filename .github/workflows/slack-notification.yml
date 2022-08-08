@@ -58,7 +58,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "${{ fromJSON(toJSON(github.event.comment.body)) }}"
+                    "text": ${{ toJSON(github.event.comment.body) }}
                   }
                 },
                 {
